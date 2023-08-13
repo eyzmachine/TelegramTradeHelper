@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradeHelper", "TradeHelper\TradeHelper.csproj", "{626125A6-90D0-4A2F-9E7D-B49EFF20D39F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{626125A6-90D0-4A2F-9E7D-B49EFF20D39F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626125A6-90D0-4A2F-9E7D-B49EFF20D39F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626125A6-90D0-4A2F-9E7D-B49EFF20D39F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626125A6-90D0-4A2F-9E7D-B49EFF20D39F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0DC707FA-C79E-4D40-8901-0B1FF4E63D20}
+	EndGlobalSection
+EndGlobal
