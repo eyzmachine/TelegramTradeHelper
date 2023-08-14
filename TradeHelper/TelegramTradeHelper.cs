@@ -26,6 +26,7 @@ namespace TradeHelper
             try
             {
                 Settings.Init();
+                Settings.SetLanguage();
                 LogParser.InitLogReader();
                 LogParser.InitWatcher();
             }

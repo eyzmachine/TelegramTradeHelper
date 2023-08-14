@@ -173,7 +173,7 @@ namespace TradeHelper.Misc
                         break;
                     }
 
-                    Thread.Sleep(Settings.UpdateTime ?? 1000);
+                    Thread.Sleep(Settings.UpdateTime);
 
                     var now = DateTime.Now;
 

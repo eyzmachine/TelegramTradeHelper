@@ -18,7 +18,7 @@ namespace TradeHelper.Misc
 
         public static bool AcceptAllMessages { get; private set; }
 
-        public static int? UpdateTime { get; private set; }
+        public static int UpdateTime { get; private set; }
 
         public static void Init()
         {
@@ -26,11 +26,14 @@ namespace TradeHelper.Misc
             LogfilePath = ReadSetting("pathToLogFile");
             Language = ReadSetting("language");
             UserName = ReadSetting("userName");
-            UserId = ReadSetting<long>("userId");
+            UserId = ReadSetting<long>("userId") ?? 0;
             AcceptAllMessages = ReadSetting<bool>("allMessages") ?? true;
-            UpdateTime = ReadSetting<int>("updateTime");
 
-            SetLanguage();
+            var updTime = ReadSetting<int>("updateTime");
+            UpdateTime = 
+                (updTime == null || updTime == 0) 
+                ? 1000 
+                : ReadSetting<int>("updateTime").Value;
         }
 
         private static string ReadSetting(string key)
@@ -72,9 +75,10 @@ namespace TradeHelper.Misc
                     result = Convert.ChangeType(settingObj, typeof(T)) as T?;
                 }
             }
-            catch (ConfigurationErrorsException ex)
+            catch (Exception ex)
             {
                 DefaultLogger.Error(ex.Message, ex);
+                return default(T);
             }
 
             return result;
