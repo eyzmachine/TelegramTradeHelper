@@ -1,6 +1,6 @@
-
 RUS:
-Общая информация:
+
+Общая информация: 
 Небольшая утилита для пересылки личных сообщений в Телеграм
 
 Важные замечания:
@@ -13,7 +13,7 @@ RUS:
 3. Следующим сообщением он предложит наименовать бота, любое
 4. Следующим сообщением нужно набрать @ник бота, тоже любой, лишь бы свободен и оканчивался на bot
 5. Скопировать токен, который BotFather вам пришлёт, будет выглядеть примерно как 6308186963:AAEwDFcOI1ngEch6iZykCwBtxPN-kPsLT24
-6. Открыть любым блокнотом файл TradeHelper.exe.config рядом с файлом запуска и вставить преусловутый токен в тег с ключом telegramToken
+6. Открыть любым блокнотом файл TradeHelper.exe.config рядом с файлом запуска и вставить упомянутый выше токен в тег с ключом telegramToken
 7. В этом же файл в тег с ключом pathToLogFile вставить полный путь до логов Client.txt (обычно находится в папке logs игры)
 8. Если клиент русский, то поменять язык language на значение ru (важно, если надо только трейд сообщения доставать из лички)
 9. Если нужны все сообщения, а не только трейд, то в тег с ключом allMesages вставить true вместо false
@@ -21,14 +21,15 @@ RUS:
 11. Если всё вбито правильно и токен рабочий, то после нажатия "Проверить коннект" надпись поменяется на Коннект есть
 12. Если коннекта нет, то перепроверить токен
 13. Нажать "Начало работы бота" и прописать в раннее созданном боте команду /start . Если всё хорошо, придёт ответное сообщение о том, что бот работает
-14. Чтобы не начинать каждый раз работу с команды старт, можно получить UserId и UserName с помощью команды /getid, либо через бота https://t.me/username_to_id_bot , и вписать их в конфиг с оответствующие теги
+14. Чтобы не начинать каждый раз работу с команды старт, можно получить UserId и UserName с помощью команды /getid, либо через бота https://t.me/username_to_id_bot , и вписать их в конфиг в соответствующие теги
 
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
 
 ENG:
-Info:
+
+Info: 
 Small app for sending pm messages from PoE client to Telegram
 
 IMPORTANT:
@@ -39,7 +40,7 @@ Instruction:
 1. Write command /start to BotFather in Telegram (https://t.me/BotFather)
 2. Write command /newbot
 3. Next message you have to name your bot
-4. Next message you have to choose @nick of your bot
+4. Next message you have to choose @nick of your bot (must be free and ends with "bot")
 5. BotFather will send you token like 6308186963:AAEwDFcOI1ngEch6iZykCwBtxPN-kPsLT24, copy it
 6. Open with and notepad TradeHelper.exe.config file near execution file and paste token into telegramToken tag
 7. In same file paste full path to log file Client.txt (usually this file in "Logs" folder)
