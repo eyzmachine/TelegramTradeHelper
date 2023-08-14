@@ -64,7 +64,7 @@
             this.ConnectionIndicator.Name = "ConnectionIndicator";
             this.ConnectionIndicator.Size = new System.Drawing.Size(339, 49);
             this.ConnectionIndicator.TabIndex = 2;
-            this.ConnectionIndicator.Text = "Press any button";
+            this.ConnectionIndicator.Text = global::TradeHelper.Resources.FormStrings.PressAnyButton;
             this.ConnectionIndicator.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // notifyIcon1
