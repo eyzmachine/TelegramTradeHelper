@@ -22,6 +22,7 @@ RUS:
 12. Если коннекта нет, то перепроверить токен
 13. Нажать "Начало работы бота" и прописать в раннее созданном боте команду /start . Если всё хорошо, придёт ответное сообщение о том, что бот работает
 14. Чтобы не начинать каждый раз работу с команды старт, можно получить UserId и UserName с помощью команды /getid, либо через бота https://t.me/username_to_id_bot , и вписать их в конфиг в соответствующие теги
+15. Если возникает ошибка доступа к файлу лога (выглядит примерно как The process cannot access the file 'D:\PathOfExile\logs\Client.txt' because it is being used by another process.System.IO.IOException), то в конфиге в теге useTempFile поставить true
 
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
@@ -51,3 +52,4 @@ Instruction:
 12. If connection failed then check token
 13. Press Start working, then type in your bot /start. If everything alright you will get message that bot is working.
 14. If you dont want to type /start always after app launch you can get your UserId and UserName with /getid command or with https://t.me/username_to_id_bot bot and paste it in same name tag values in config
+15. If you got file access error (looks like The process cannot access the file 'D:\PathOfExile\logs\Client.txt' because it is being used by another process.System.IO.IOException) then you have to change to true config tag value "useTempFile"

@@ -11,6 +11,7 @@ namespace TradeHelper.Misc
         private static long _lastPos;
         private static FileSystemWatcher _watcher;
         private static string _tempPath;
+        private static string _pathToDestination;
         private static CancellationTokenSource _cts;
         private static Task _forceUpdateFileTask;
 
@@ -48,15 +49,21 @@ namespace TradeHelper.Misc
 
         public static void InitLogReader()
         {
-            _tempPath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
-            File.Copy(Settings.LogfilePath, _tempPath, true);
-
-            DefaultLogger.Info($"Logs successfully copied in temp file {_tempPath}.");
-
-            using (var freader = new FileStream(_tempPath, FileMode.Open))
+            if (Settings.UseTempFile)
             {
-                _lastPos = freader.Length;
+                _tempPath = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
+                File.Copy(Settings.LogfilePath, _tempPath, true);
+
+                DefaultLogger.Info($"Logs successfully copied in temp file {_tempPath}.");
+
+                _pathToDestination = _tempPath;
             }
+            else
+            {
+                _pathToDestination = Settings.LogfilePath;
+            }
+
+            _lastPos = new FileInfo(_pathToDestination).Length;
         }
 
         public static void StartForceUpdateFile()
@@ -86,7 +93,7 @@ namespace TradeHelper.Misc
                 _forceUpdateFileTask = null;
             }
 
-            if (File.Exists(_tempPath))
+            if (Settings.UseTempFile && File.Exists(_tempPath))
             {
                 File.Delete(_tempPath);
             }
@@ -101,9 +108,12 @@ namespace TradeHelper.Misc
 
             if (length != _lastPos)
             {
-                File.Copy(Settings.LogfilePath, _tempPath, true);
+                if (Settings.UseTempFile)
+                {
+                    File.Copy(Settings.LogfilePath, _tempPath, true);
+                }
 
-                using (var freader = File.Open(_tempPath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                using (var freader = File.Open(_pathToDestination, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
                 {
                     freader.Seek(_lastPos, SeekOrigin.Begin);
 

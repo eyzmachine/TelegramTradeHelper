@@ -20,6 +20,8 @@ namespace TradeHelper.Misc
 
         public static int UpdateTime { get; private set; }
 
+        public static bool UseTempFile { get; private set; }
+
         public static void Init()
         {
             TelegramToken = ReadSetting("telegramToken");
@@ -28,6 +30,7 @@ namespace TradeHelper.Misc
             UserName = ReadSetting("userName");
             UserId = ReadSetting<long>("userId") ?? 0;
             AcceptAllMessages = ReadSetting<bool>("allMessages") ?? true;
+            UseTempFile = ReadSetting<bool>("useTempFile") ?? false;
 
             var updTime = ReadSetting<int>("updateTime");
             UpdateTime = 
