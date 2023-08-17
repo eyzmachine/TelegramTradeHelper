@@ -36,7 +36,7 @@ namespace TradeHelper.Misc
             UpdateTime = 
                 (updTime == null || updTime == 0) 
                 ? 1000 
-                : ReadSetting<int>("updateTime").Value;
+                : updTime.Value;
         }
 
         private static string ReadSetting(string key)
